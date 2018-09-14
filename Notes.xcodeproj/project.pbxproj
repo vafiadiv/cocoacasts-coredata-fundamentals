@@ -54,14 +54,62 @@
 		A9BC2704214C615A002DAD18 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				A9BC2705214C615A002DAD18 /* AppDelegate.swift */,
-				A9BC2707214C615A002DAD18 /* ViewController.swift */,
-				A9BC2709214C615A002DAD18 /* Main.storyboard */,
-				A9BC270C214C615F002DAD18 /* Assets.xcassets */,
-				A9BC270E214C615F002DAD18 /* LaunchScreen.storyboard */,
-				A9BC2711214C615F002DAD18 /* Info.plist */,
+				A9BC2717214C61AB002DAD18 /* Application Delegate */,
+				A9BC2718214C61C2002DAD18 /* View Controllers */,
+				A9D243FA214C620600EDA2DA /* Resources */,
+				A9D243FB214C622500EDA2DA /* Storyboards */,
+				A9D243FC214C623500EDA2DA /* Supporting Files */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		A9BC2717214C61AB002DAD18 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC2705214C615A002DAD18 /* AppDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		A9BC2718214C61C2002DAD18 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9D243FD214C625100EDA2DA /* Root View Controller */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A9D243FA214C620600EDA2DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC270C214C615F002DAD18 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A9D243FB214C622500EDA2DA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC2709214C615A002DAD18 /* Main.storyboard */,
+				A9BC270E214C615F002DAD18 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A9D243FC214C623500EDA2DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC2711214C615F002DAD18 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9D243FD214C625100EDA2DA /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9BC2707214C615A002DAD18 /* ViewController.swift */,
+			);
+			path = "Root View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,7 +330,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6V88ZYWK4;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = "Notes/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +349,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D6V88ZYWK4;
-				INFOPLIST_FILE = Notes/Info.plist;
+				INFOPLIST_FILE = "Notes/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
