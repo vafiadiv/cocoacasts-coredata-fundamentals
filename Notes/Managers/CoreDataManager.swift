@@ -14,6 +14,7 @@ final class CoreDataManager {
     
     init(modelName: String) {
         self.modelName = modelName
+        setupNotificationHandling()
     }
     
     private(set) lazy var managedObjectContext: NSManagedObjectContext = {
@@ -49,4 +50,28 @@ final class CoreDataManager {
         }
         return persistentStoreCoordinator
     }()
+    
+    private func setupNotificationHandling() {
+        let notificationCenter = NotificationCenter.default
+        let notificationNames: [NSNotification.Name] = [.UIApplicationDidEnterBackground, .UIApplicationDidEnterBackground]
+        for notificationName in notificationNames {
+            notificationCenter.addObserver(self,
+                                           selector: #selector(saveChanges),
+                                           name: notificationName,
+                                           object: nil)
+        }
+    }
+    
+    @objc
+    private func saveChanges() {
+        guard managedObjectContext.hasChanges else {
+            return
+        }
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Unable to save")
+            print("\(error)")
+        }
+    }
 }
