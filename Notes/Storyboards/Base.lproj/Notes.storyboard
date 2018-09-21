@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="42h-8w-i2i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="42h-8w-i2i">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -82,6 +82,7 @@
                                                     <outlet property="contentsLabel" destination="dTc-cx-Bwf" id="QIG-nT-zM7"/>
                                                     <outlet property="titleLabel" destination="ssA-dh-2Ef" id="8V0-PL-mQQ"/>
                                                     <outlet property="updatedAtLabel" destination="dtu-p0-MKr" id="fed-Kr-hs2"/>
+                                                    <segue destination="ijh-6T-iQm" kind="show" identifier="Note" id="9fR-tm-7Wt"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -128,6 +129,51 @@
             </objects>
             <point key="canvasLocation" x="528.79999999999995" y="122.78860569715144"/>
         </scene>
+        <!--Note View Controller-->
+        <scene sceneID="9zd-zJ-K69">
+            <objects>
+                <viewController id="ijh-6T-iQm" customClass="NoteViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Wu-Bf-ojM"/>
+                        <viewControllerLayoutGuide type="bottom" id="0MG-Vd-KJ1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YTE-dQ-abB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-bS-Vw6">
+                                <rect key="frame" x="20" y="84" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4LM-62-5PL">
+                                <rect key="frame" x="20" y="122" width="335" height="525"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4LM-62-5PL" firstAttribute="leading" secondItem="YTE-dQ-abB" secondAttribute="leading" constant="20" id="4yx-kN-e70"/>
+                            <constraint firstItem="cfw-bS-Vw6" firstAttribute="top" secondItem="2Wu-Bf-ojM" secondAttribute="bottom" constant="20" id="7n0-3c-WrT"/>
+                            <constraint firstItem="0MG-Vd-KJ1" firstAttribute="top" secondItem="4LM-62-5PL" secondAttribute="bottom" constant="20" id="88q-cM-6UA"/>
+                            <constraint firstAttribute="trailing" secondItem="cfw-bS-Vw6" secondAttribute="trailing" constant="20" id="Ovk-lF-r3J"/>
+                            <constraint firstItem="cfw-bS-Vw6" firstAttribute="leading" secondItem="YTE-dQ-abB" secondAttribute="leading" constant="20" id="RCT-7s-ByK"/>
+                            <constraint firstItem="4LM-62-5PL" firstAttribute="top" secondItem="cfw-bS-Vw6" secondAttribute="bottom" constant="8" id="j2w-Tv-5cu"/>
+                            <constraint firstAttribute="trailing" secondItem="4LM-62-5PL" secondAttribute="trailing" constant="20" id="udU-ea-pLR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentsTextView" destination="4LM-62-5PL" id="Vuw-LH-e72"/>
+                        <outlet property="titleTextField" destination="cfw-bS-Vw6" id="99d-NI-EdD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jGE-7n-j5A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="462"/>
+        </scene>
         <!--Add Note View Controller-->
         <scene sceneID="YIO-3O-Hu6">
             <objects>
@@ -147,7 +193,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hFT-0V-1L1">
-                                <rect key="frame" x="20" y="122" width="335" height="525"/>
+                                <rect key="frame" x="20" y="122" width="335" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -182,7 +228,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="198-aR-Zjq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309.5999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="1401" y="-216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1bM-HM-s7f">
@@ -190,7 +236,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="42h-8w-i2i" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S9L-mj-hZ9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

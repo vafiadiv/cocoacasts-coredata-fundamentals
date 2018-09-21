@@ -13,6 +13,7 @@
 		A9808E2821507FC60027D8D4 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9808E2621507FC60027D8D4 /* AddNoteViewController.swift */; };
 		A9808E2B215080030027D8D4 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9808E29215080020027D8D4 /* Notes.storyboard */; };
 		A9808E2E2150826A0027D8D4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9808E2D2150826A0027D8D4 /* UIViewController.swift */; };
+		A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B152D421559CF400A8BD19 /* NoteViewController.swift */; };
 		A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC2705214C615A002DAD18 /* AppDelegate.swift */; };
 		A9BC270D214C615F002DAD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BC270C214C615F002DAD18 /* Assets.xcassets */; };
 		A9BC2710214C615F002DAD18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BC270E214C615F002DAD18 /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 		A9808E2621507FC60027D8D4 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		A9808E2A215080020027D8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notes.storyboard; sourceTree = "<group>"; };
 		A9808E2D2150826A0027D8D4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A9B152D421559CF400A8BD19 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A9BC2702214C615A002DAD18 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BC2705214C615A002DAD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BC270C214C615F002DAD18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A9B152D321559CF400A8BD19 /* Note View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A9B152D421559CF400A8BD19 /* NoteViewController.swift */,
+			);
+			path = "Note View Controller";
+			sourceTree = "<group>";
+		};
 		A9BC26F9214C615A002DAD18 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		A9BC2718214C61C2002DAD18 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9B152D321559CF400A8BD19 /* Note View Controller */,
 				A9808E2521507FC60027D8D4 /* Add Note View Controller */,
 				A9808E2321507FC60027D8D4 /* Notes View Controller */,
 			);
@@ -257,6 +268,7 @@
 				A9808E2721507FC60027D8D4 /* NotesViewController.swift in Sources */,
 				A9808E2E2150826A0027D8D4 /* UIViewController.swift in Sources */,
 				A96CA73C2151BD0F0082E3CE /* Note.swift in Sources */,
+				A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */,
 				A9808E2821507FC60027D8D4 /* AddNoteViewController.swift in Sources */,
 				A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */,
 				A96CA7392151B91E0082E3CE /* NoteTableViewCell.swift in Sources */,
