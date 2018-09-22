@@ -153,18 +153,23 @@ extension NotesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue Reusable Cell
         
-        let note = fetchedResultsController.object(at: indexPath)
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.reuseIdentifier, for: indexPath) as? NoteTableViewCell else {
             fatalError("Unexpected Index Path")
         }
-
-        cell.titleLabel.text = note.title
-        cell.contentsLabel.text = note.contents
-        cell.updatedAtLabel.text = updatedAtDateFormatter.string(from: note.updatedAtAsDate)
+        configureCell(cell, at: indexPath)
         return cell
     }
 
+    
+    func configureCell(_ cell: NoteTableViewCell, at indexPath: IndexPath) {
+        let note = fetchedResultsController.object(at: indexPath)
+        
+        cell.titleLabel.text = note.title
+        cell.contentsLabel.text = note.contents
+        cell.updatedAtLabel.text = updatedAtDateFormatter.string(from: note.updatedAtAsDate)
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
@@ -172,9 +177,47 @@ extension NotesViewController: UITableViewDataSource {
         
         coreDataManager.managedObjectContext.delete(note)
     }
-
 }
 
 extension NotesViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
     
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
+                    didChange anObject: Any,
+                    at indexPath: IndexPath?,
+                    for type: NSFetchedResultsChangeType,
+                    newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [ indexPath ], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? NoteTableViewCell {
+                configureCell(cell, at: indexPath)
+                
+            }
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [ newIndexPath ], with: .fade)
+            }
+        }
+    }
 }
+
+
+
