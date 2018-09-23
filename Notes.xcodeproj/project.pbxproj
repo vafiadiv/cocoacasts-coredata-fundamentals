@@ -92,6 +92,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A99918F921571E4100061C52 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				A9B152D321559CF400A8BD19 /* Note View Controller */,
+				A9808E2521507FC60027D8D4 /* Add Note View Controller */,
+				A9808E2321507FC60027D8D4 /* Notes View Controller */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		A9B152D321559CF400A8BD19 /* Note View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,9 +153,7 @@
 		A9BC2718214C61C2002DAD18 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A9B152D321559CF400A8BD19 /* Note View Controller */,
-				A9808E2521507FC60027D8D4 /* Add Note View Controller */,
-				A9808E2321507FC60027D8D4 /* Notes View Controller */,
+				A99918F921571E4100061C52 /* Notes */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
