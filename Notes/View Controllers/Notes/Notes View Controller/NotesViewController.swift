@@ -168,6 +168,7 @@ extension NotesViewController: UITableViewDataSource {
         cell.titleLabel.text = note.title
         cell.contentsLabel.text = note.contents
         cell.updatedAtLabel.text = updatedAtDateFormatter.string(from: note.updatedAtAsDate)
+        cell.categoryColorView.backgroundColor = note.category?.color ?? .white
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

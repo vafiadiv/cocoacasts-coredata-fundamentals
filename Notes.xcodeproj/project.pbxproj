@@ -20,6 +20,7 @@
 		A99919082157A50900061C52 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919042157A50900061C52 /* CategoryViewController.swift */; };
 		A999190A2157A51100061C52 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919092157A51100061C52 /* UIColor.swift */; };
 		A999190D2158408500061C52 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999190C2158408500061C52 /* ColorViewController.swift */; };
+		A999190F2158435500061C52 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999190E2158435500061C52 /* Category.swift */; };
 		A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B152D421559CF400A8BD19 /* NoteViewController.swift */; };
 		A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC2705214C615A002DAD18 /* AppDelegate.swift */; };
 		A9BC270D214C615F002DAD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BC270C214C615F002DAD18 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		A99919042157A50900061C52 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A99919092157A51100061C52 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A999190C2158408500061C52 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		A999190E2158435500061C52 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A9B152D421559CF400A8BD19 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A9BC2702214C615A002DAD18 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BC2705214C615A002DAD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				A99919092157A51100061C52 /* UIColor.swift */,
 				A9808E2D2150826A0027D8D4 /* UIViewController.swift */,
+				A999190E2158435500061C52 /* Category.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				A96CA73C2151BD0F0082E3CE /* Note.swift in Sources */,
 				A99919052157A50900061C52 /* CategoriesViewController.swift in Sources */,
 				A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */,
+				A999190F2158435500061C52 /* Category.swift in Sources */,
 				A99919062157A50900061C52 /* CategoryTableViewCell.swift in Sources */,
 				A9808E2821507FC60027D8D4 /* AddNoteViewController.swift in Sources */,
 				A99919072157A50900061C52 /* AddCategoryViewController.swift in Sources */,
