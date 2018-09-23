@@ -13,6 +13,12 @@
 		A9808E2821507FC60027D8D4 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9808E2621507FC60027D8D4 /* AddNoteViewController.swift */; };
 		A9808E2B215080030027D8D4 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9808E29215080020027D8D4 /* Notes.storyboard */; };
 		A9808E2E2150826A0027D8D4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9808E2D2150826A0027D8D4 /* UIViewController.swift */; };
+		A99918FC2157A4FD00061C52 /* Categories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A99918FA2157A4FD00061C52 /* Categories.storyboard */; };
+		A99919052157A50900061C52 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99918FF2157A50900061C52 /* CategoriesViewController.swift */; };
+		A99919062157A50900061C52 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919002157A50900061C52 /* CategoryTableViewCell.swift */; };
+		A99919072157A50900061C52 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919022157A50900061C52 /* AddCategoryViewController.swift */; };
+		A99919082157A50900061C52 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919042157A50900061C52 /* CategoryViewController.swift */; };
+		A999190A2157A51100061C52 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919092157A51100061C52 /* UIColor.swift */; };
 		A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B152D421559CF400A8BD19 /* NoteViewController.swift */; };
 		A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC2705214C615A002DAD18 /* AppDelegate.swift */; };
 		A9BC270D214C615F002DAD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BC270C214C615F002DAD18 /* Assets.xcassets */; };
@@ -29,6 +35,12 @@
 		A9808E2621507FC60027D8D4 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		A9808E2A215080020027D8D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notes.storyboard; sourceTree = "<group>"; };
 		A9808E2D2150826A0027D8D4 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		A99918FB2157A4FD00061C52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Categories.storyboard; sourceTree = "<group>"; };
+		A99918FF2157A50900061C52 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		A99919002157A50900061C52 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		A99919022157A50900061C52 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		A99919042157A50900061C52 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		A99919092157A51100061C52 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A9B152D421559CF400A8BD19 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A9BC2702214C615A002DAD18 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BC2705214C615A002DAD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +99,7 @@
 		A9808E2C2150826A0027D8D4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A99919092157A51100061C52 /* UIColor.swift */,
 				A9808E2D2150826A0027D8D4 /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -100,6 +113,41 @@
 				A9808E2321507FC60027D8D4 /* Notes View Controller */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		A99918FD2157A50900061C52 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A99918FE2157A50900061C52 /* Categories View Controller */,
+				A99919012157A50900061C52 /* Add Category View Controller */,
+				A99919032157A50900061C52 /* Category View Controller */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A99918FE2157A50900061C52 /* Categories View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A99918FF2157A50900061C52 /* CategoriesViewController.swift */,
+				A99919002157A50900061C52 /* CategoryTableViewCell.swift */,
+			);
+			path = "Categories View Controller";
+			sourceTree = "<group>";
+		};
+		A99919012157A50900061C52 /* Add Category View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A99919022157A50900061C52 /* AddCategoryViewController.swift */,
+			);
+			path = "Add Category View Controller";
+			sourceTree = "<group>";
+		};
+		A99919032157A50900061C52 /* Category View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A99919042157A50900061C52 /* CategoryViewController.swift */,
+			);
+			path = "Category View Controller";
 			sourceTree = "<group>";
 		};
 		A9B152D321559CF400A8BD19 /* Note View Controller */ = {
@@ -153,6 +201,7 @@
 		A9BC2718214C61C2002DAD18 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A99918FD2157A50900061C52 /* Categories */,
 				A99918F921571E4100061C52 /* Notes */,
 			);
 			path = "View Controllers";
@@ -169,6 +218,7 @@
 		A9D243FB214C622500EDA2DA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				A99918FA2157A4FD00061C52 /* Categories.storyboard */,
 				A9808E29215080020027D8D4 /* Notes.storyboard */,
 				A9BC270E214C615F002DAD18 /* LaunchScreen.storyboard */,
 			);
@@ -258,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99918FC2157A4FD00061C52 /* Categories.storyboard in Resources */,
 				A9D243FF214C62B600EDA2DA /* Readme.md in Resources */,
 				A9BC2710214C615F002DAD18 /* LaunchScreen.storyboard in Resources */,
 				A9808E2B215080030027D8D4 /* Notes.storyboard in Resources */,
@@ -273,12 +324,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9D24402214C634F00EDA2DA /* CoreDataManager.swift in Sources */,
+				A999190A2157A51100061C52 /* UIColor.swift in Sources */,
 				A9808E2721507FC60027D8D4 /* NotesViewController.swift in Sources */,
 				A9808E2E2150826A0027D8D4 /* UIViewController.swift in Sources */,
 				A96CA73C2151BD0F0082E3CE /* Note.swift in Sources */,
+				A99919052157A50900061C52 /* CategoriesViewController.swift in Sources */,
 				A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */,
+				A99919062157A50900061C52 /* CategoryTableViewCell.swift in Sources */,
 				A9808E2821507FC60027D8D4 /* AddNoteViewController.swift in Sources */,
+				A99919072157A50900061C52 /* AddCategoryViewController.swift in Sources */,
 				A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */,
+				A99919082157A50900061C52 /* CategoryViewController.swift in Sources */,
 				A96CA7392151B91E0082E3CE /* NoteTableViewCell.swift in Sources */,
 				A9D24406214C67A100EDA2DA /* Notes.xcdatamodeld in Sources */,
 			);
@@ -293,6 +349,14 @@
 				A9808E2A215080020027D8D4 /* Base */,
 			);
 			name = Notes.storyboard;
+			sourceTree = "<group>";
+		};
+		A99918FA2157A4FD00061C52 /* Categories.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A99918FB2157A4FD00061C52 /* Base */,
+			);
+			name = Categories.storyboard;
 			sourceTree = "<group>";
 		};
 		A9BC270E214C615F002DAD18 /* LaunchScreen.storyboard */ = {
