@@ -41,10 +41,14 @@ final class CoreDataManager {
         let persistentStoreURL = documentsURL.appendingPathComponent(storeName)
         
         do {
+            let options = [
+                NSMigratePersistentStoresAutomaticallyOption: true,
+                NSInferMappingModelAutomaticallyOption: true
+            ]
             try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType,
                                                               configurationName: nil,
                                                               at: persistentStoreURL,
-                                                              options: nil)
+                                                              options: options)
         } catch {
             fatalError("Cannot initialize persistent store coordinator")
         }

@@ -45,6 +45,7 @@
 		A99919092157A51100061C52 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A999190C2158408500061C52 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		A999190E2158435500061C52 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		A9991910215848C600061C52 /* Notes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes 2.xcdatamodel"; sourceTree = "<group>"; };
 		A9B152D421559CF400A8BD19 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A9BC2702214C615A002DAD18 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BC2705214C615A002DAD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -565,9 +566,10 @@
 		A9D24404214C67A100EDA2DA /* Notes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				A9991910215848C600061C52 /* Notes 2.xcdatamodel */,
 				A9D24405214C67A100EDA2DA /* Notes.xcdatamodel */,
 			);
-			currentVersion = A9D24405214C67A100EDA2DA /* Notes.xcdatamodel */;
+			currentVersion = A9991910215848C600061C52 /* Notes 2.xcdatamodel */;
 			path = Notes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
