@@ -19,6 +19,7 @@
 		A99919072157A50900061C52 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919022157A50900061C52 /* AddCategoryViewController.swift */; };
 		A99919082157A50900061C52 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919042157A50900061C52 /* CategoryViewController.swift */; };
 		A999190A2157A51100061C52 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99919092157A51100061C52 /* UIColor.swift */; };
+		A999190D2158408500061C52 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A999190C2158408500061C52 /* ColorViewController.swift */; };
 		A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9B152D421559CF400A8BD19 /* NoteViewController.swift */; };
 		A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BC2705214C615A002DAD18 /* AppDelegate.swift */; };
 		A9BC270D214C615F002DAD18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9BC270C214C615F002DAD18 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		A99919022157A50900061C52 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		A99919042157A50900061C52 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		A99919092157A51100061C52 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A999190C2158408500061C52 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		A9B152D421559CF400A8BD19 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 		A9BC2702214C615A002DAD18 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BC2705214C615A002DAD18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,9 +147,18 @@
 		A99919032157A50900061C52 /* Category View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A999190B2158408500061C52 /* Color View Controller */,
 				A99919042157A50900061C52 /* CategoryViewController.swift */,
 			);
 			path = "Category View Controller";
+			sourceTree = "<group>";
+		};
+		A999190B2158408500061C52 /* Color View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A999190C2158408500061C52 /* ColorViewController.swift */,
+			);
+			path = "Color View Controller";
 			sourceTree = "<group>";
 		};
 		A9B152D321559CF400A8BD19 /* Note View Controller */ = {
@@ -336,6 +347,7 @@
 				A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */,
 				A99919082157A50900061C52 /* CategoryViewController.swift in Sources */,
 				A96CA7392151B91E0082E3CE /* NoteTableViewCell.swift in Sources */,
+				A999190D2158408500061C52 /* ColorViewController.swift in Sources */,
 				A9D24406214C67A100EDA2DA /* Notes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
