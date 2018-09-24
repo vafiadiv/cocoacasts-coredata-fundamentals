@@ -105,7 +105,7 @@ class NoteViewController: UIViewController {
     }
 
     private func updateTagsLabel() {
-
+        tagsLabel.text = note?.alphabetizedTagsAsString ?? "No Tags"
     }
 
     private func setupTitleTextField() {
@@ -135,6 +135,7 @@ class NoteViewController: UIViewController {
 
         if (updates.filter { return $0 == note }).count > 0 {
             updateCategoryLabel()
+            updateTagsLabel()
         }
     }
 

@@ -27,6 +27,11 @@ class TagViewController: UIViewController {
 
         setupView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.nameTextField.becomeFirstResponder()
+    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
