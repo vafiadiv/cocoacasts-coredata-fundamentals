@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A958CB702159946600F50E26 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A958CB692159946600F50E26 /* TagViewController.swift */; };
+		A958CB712159946600F50E26 /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A958CB6B2159946600F50E26 /* AddTagViewController.swift */; };
+		A958CB722159946600F50E26 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A958CB6E2159946600F50E26 /* TagTableViewCell.swift */; };
+		A958CB732159946600F50E26 /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A958CB6F2159946600F50E26 /* TagsViewController.swift */; };
+		A958CB762159947000F50E26 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A958CB742159947000F50E26 /* Tags.storyboard */; };
 		A96CA7392151B91E0082E3CE /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CA7382151B91E0082E3CE /* NoteTableViewCell.swift */; };
 		A96CA73C2151BD0F0082E3CE /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96CA73B2151BD0F0082E3CE /* Note.swift */; };
 		A9808E2721507FC60027D8D4 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9808E2421507FC60027D8D4 /* NotesViewController.swift */; };
@@ -31,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A958CB692159946600F50E26 /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		A958CB6B2159946600F50E26 /* AddTagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTagViewController.swift; sourceTree = "<group>"; };
+		A958CB6E2159946600F50E26 /* TagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
+		A958CB6F2159946600F50E26 /* TagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		A958CB752159947000F50E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tags.storyboard; sourceTree = "<group>"; };
 		A96CA7382151B91E0082E3CE /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		A96CA73B2151BD0F0082E3CE /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A9808E2421507FC60027D8D4 /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +78,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A958CB672159946600F50E26 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				A958CB682159946600F50E26 /* Tag View Controller */,
+				A958CB6A2159946600F50E26 /* Add Tag View Controller */,
+				A958CB6C2159946600F50E26 /* Tags View Controller */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		A958CB682159946600F50E26 /* Tag View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A958CB692159946600F50E26 /* TagViewController.swift */,
+			);
+			path = "Tag View Controller";
+			sourceTree = "<group>";
+		};
+		A958CB6A2159946600F50E26 /* Add Tag View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A958CB6B2159946600F50E26 /* AddTagViewController.swift */,
+			);
+			path = "Add Tag View Controller";
+			sourceTree = "<group>";
+		};
+		A958CB6C2159946600F50E26 /* Tags View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A958CB6D2159946600F50E26 /* Table View Cells */,
+				A958CB6F2159946600F50E26 /* TagsViewController.swift */,
+			);
+			path = "Tags View Controller";
+			sourceTree = "<group>";
+		};
+		A958CB6D2159946600F50E26 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A958CB6E2159946600F50E26 /* TagTableViewCell.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
 		A96CA7372151B91E0082E3CE /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +132,7 @@
 		A96CA73A2151BCF80082E3CE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A999190E2158435500061C52 /* Category.swift */,
 				A96CA73B2151BD0F0082E3CE /* Note.swift */,
 			);
 			path = Extensions;
@@ -106,7 +160,6 @@
 			children = (
 				A99919092157A51100061C52 /* UIColor.swift */,
 				A9808E2D2150826A0027D8D4 /* UIViewController.swift */,
-				A999190E2158435500061C52 /* Category.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,6 +269,7 @@
 		A9BC2718214C61C2002DAD18 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A958CB672159946600F50E26 /* Tags */,
 				A99918FD2157A50900061C52 /* Categories */,
 				A99918F921571E4100061C52 /* Notes */,
 			);
@@ -233,6 +287,7 @@
 		A9D243FB214C622500EDA2DA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				A958CB742159947000F50E26 /* Tags.storyboard */,
 				A99918FA2157A4FD00061C52 /* Categories.storyboard */,
 				A9808E29215080020027D8D4 /* Notes.storyboard */,
 				A9BC270E214C615F002DAD18 /* LaunchScreen.storyboard */,
@@ -324,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A99918FC2157A4FD00061C52 /* Categories.storyboard in Resources */,
+				A958CB762159947000F50E26 /* Tags.storyboard in Resources */,
 				A9D243FF214C62B600EDA2DA /* Readme.md in Resources */,
 				A9BC2710214C615F002DAD18 /* LaunchScreen.storyboard in Resources */,
 				A9808E2B215080030027D8D4 /* Notes.storyboard in Resources */,
@@ -341,7 +397,9 @@
 				A9D24402214C634F00EDA2DA /* CoreDataManager.swift in Sources */,
 				A999190A2157A51100061C52 /* UIColor.swift in Sources */,
 				A9808E2721507FC60027D8D4 /* NotesViewController.swift in Sources */,
+				A958CB702159946600F50E26 /* TagViewController.swift in Sources */,
 				A9808E2E2150826A0027D8D4 /* UIViewController.swift in Sources */,
+				A958CB712159946600F50E26 /* AddTagViewController.swift in Sources */,
 				A96CA73C2151BD0F0082E3CE /* Note.swift in Sources */,
 				A99919052157A50900061C52 /* CategoriesViewController.swift in Sources */,
 				A9B152D521559CF400A8BD19 /* NoteViewController.swift in Sources */,
@@ -350,8 +408,10 @@
 				A9808E2821507FC60027D8D4 /* AddNoteViewController.swift in Sources */,
 				A99919072157A50900061C52 /* AddCategoryViewController.swift in Sources */,
 				A9BC2706214C615A002DAD18 /* AppDelegate.swift in Sources */,
+				A958CB722159946600F50E26 /* TagTableViewCell.swift in Sources */,
 				A99919082157A50900061C52 /* CategoryViewController.swift in Sources */,
 				A96CA7392151B91E0082E3CE /* NoteTableViewCell.swift in Sources */,
+				A958CB732159946600F50E26 /* TagsViewController.swift in Sources */,
 				A999190D2158408500061C52 /* ColorViewController.swift in Sources */,
 				A9D24406214C67A100EDA2DA /* Notes.xcdatamodeld in Sources */,
 			);
@@ -360,6 +420,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		A958CB742159947000F50E26 /* Tags.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A958CB752159947000F50E26 /* Base */,
+			);
+			name = Tags.storyboard;
+			sourceTree = "<group>";
+		};
 		A9808E29215080020027D8D4 /* Notes.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

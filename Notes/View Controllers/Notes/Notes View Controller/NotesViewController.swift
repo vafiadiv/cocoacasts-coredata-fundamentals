@@ -25,11 +25,12 @@ class NotesViewController: UIViewController {
     @IBOutlet var notesView: UIView!
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var tableView: UITableView!
-    
+
+    private var coreDataManager = CoreDataManager(modelName: "Notes")
     private lazy var fetchedResultsController: NSFetchedResultsController<Note> = {
         let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Note.updatedAt), ascending: false)]
-        
+
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                                   managedObjectContext: coreDataManager.managedObjectContext,
                                                                   sectionNameKeyPath: nil,
@@ -37,20 +38,13 @@ class NotesViewController: UIViewController {
         fetchedResultsController.delegate = self
         return fetchedResultsController
     }()
-    private var notes: [Note]? {
-        didSet {
-            updateView()
-        }
-    }
-    
-    private var hasNotes: Bool {
-        guard let fetchedNotes = fetchedResultsController.fetchedObjects else { return false }
-        return fetchedNotes.count > 0
-    }
 
     // MARK: -
 
-    private var coreDataManager = CoreDataManager(modelName: "Notes")
+    private var hasNotes: Bool {
+        guard let fetchedObjects = fetchedResultsController.fetchedObjects else { return false }
+        return fetchedObjects.count > 0
+    }
 
     // MARK: -
 
@@ -128,7 +122,7 @@ class NotesViewController: UIViewController {
         tableView.estimatedRowHeight = estimatedRowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
+
     private func fetchNotes() {
         do {
             try fetchedResultsController.performFetch()
@@ -152,30 +146,39 @@ extension NotesViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue Reusable Cell
-        
-        
+
+
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.reuseIdentifier, for: indexPath) as? NoteTableViewCell else {
             fatalError("Unexpected Index Path")
         }
-        configureCell(cell, at: indexPath)
+
+        // Configure Cell
+        configure(cell, at: indexPath)
+
         return cell
     }
 
-    
-    func configureCell(_ cell: NoteTableViewCell, at indexPath: IndexPath) {
+    func configure(_ cell: NoteTableViewCell, at indexPath: IndexPath) {
+        // Fetch Note
         let note = fetchedResultsController.object(at: indexPath)
-        
+
+        // Configure Cell
         cell.titleLabel.text = note.title
         cell.contentsLabel.text = note.contents
         cell.updatedAtLabel.text = updatedAtDateFormatter.string(from: note.updatedAtAsDate)
-        cell.categoryColorView.backgroundColor = note.category?.color ?? .white
+
+        if let color = note.category?.color {
+            cell.categoryColorView.backgroundColor = color
+        } else {
+            cell.categoryColorView.backgroundColor = .white
+        }
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
-        
+
         let note = fetchedResultsController.object(at: indexPath)
-        
+
         coreDataManager.managedObjectContext.delete(note)
     }
 }
@@ -184,11 +187,13 @@ extension NotesViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
-    
+
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+
+        updateView()
     }
-    
+
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>,
                     didChange anObject: Any,
                     at indexPath: IndexPath?,
@@ -201,20 +206,19 @@ extension NotesViewController: NSFetchedResultsControllerDelegate {
             }
         case .delete:
             if let indexPath = indexPath {
-                tableView.deleteRows(at: [ indexPath ], with: .fade)
+                tableView.deleteRows(at: [indexPath], with: .fade)
             }
         case .update:
             if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? NoteTableViewCell {
-                configureCell(cell, at: indexPath)
-                
+                configure(cell, at: indexPath)
             }
         case .move:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-            
+
             if let newIndexPath = newIndexPath {
-                tableView.insertRows(at: [ newIndexPath ], with: .fade)
+                tableView.insertRows(at: [newIndexPath], with: .fade)
             }
         }
     }
