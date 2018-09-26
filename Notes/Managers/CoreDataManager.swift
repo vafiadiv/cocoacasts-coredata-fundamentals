@@ -17,12 +17,17 @@ final class CoreDataManager {
         setupNotificationHandling()
     }
     
-    private(set) lazy var managedObjectContext: NSManagedObjectContext = {
+    private(set) lazy var mainManagedObjectContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        managedObjectContext.parent = self.privateManagedObjectContext
         return managedObjectContext
     }()
     
+    private lazy var privateManagedObjectContext: NSManagedObjectContext = {
+        let privateManagedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        privateManagedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
+        return privateManagedObjectContext
+    }()
     private lazy var managedObjectModel: NSManagedObjectModel = {
         guard let modelURL = Bundle.main.url(forResource: self.modelName, withExtension: "momd") else {
             fatalError("Cannot find data model")
@@ -68,14 +73,29 @@ final class CoreDataManager {
     
     @objc
     private func saveChanges() {
-        guard managedObjectContext.hasChanges else {
-            return
+        mainManagedObjectContext.performAndWait {
+            do {
+                if self.mainManagedObjectContext.hasChanges {
+                    try self.mainManagedObjectContext.save()
+                }
+            } catch {
+                print("Unable to save main managed object context: \(error)")
+            }
         }
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Unable to save")
-            print("\(error)")
+        
+        privateManagedObjectContext.perform {
+            do {
+                if self.privateManagedObjectContext.hasChanges {
+                    try self.privateManagedObjectContext.save()
+                }
+            } catch {
+                print("Unable to save private managed object context: \(error)")
+            }
         }
     }
 }
+
+
+
+
+
